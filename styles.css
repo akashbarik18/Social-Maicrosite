@@ -1,0 +1,187 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #333;
+    color: #fff;
+    padding: 15px;
+    text-shadow:
+    0 0 5px #fff, 
+    0 0 10px #4d0f0f,
+    0 0 20px #7d1e1e,
+    0 0 40px #111212,
+    0 0 80px #0ff, 
+    0 0 90px #0ff, 
+    0 0 100px #0ff, 
+    0 0 150px #0ff;
+}
+.navbar button {
+    background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+    /* left:calc(50% - 75px);
+  top:calc(50% - 25px); */
+  position: relative;
+    border-radius: 180px;
+    padding: 10px 15px;
+    cursor: pointer;
+    line-height:12px;
+}
+.navbar button::before{
+    content:'';
+    z-index:1;
+    position:absolute;
+    display:block;
+    width:80%;
+    height:70%;
+    top:15%;
+    left:10%;
+    transition: 0.3s opacity ease-in-out;
+    filter:blur(15px);
+    opacity:0;
+    background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+}
+.navbar button:hover::before{
+    opacity:1;
+    transition: 0.3s opacity ease-in-out;
+    filter:blur(25px);
+    background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+}
+.navbar button::after{
+    text-align:center;
+  line-height:40px;
+  font-size:18px;
+  color:rgba(235,235,235,1);
+  font-weight:bold;
+  z-index:5;
+  position:absolute;
+  display:block;
+  border-radius:180px;
+  width:92%;
+  height:80%;
+  top:10%;
+  left:4%;  
+  background-color:rgb(19, 20, 22);
+}
+
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+   
+}
+
+
+.profile {
+    width: 25%;
+    background: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.profile img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+.posts {
+    width: 70%;
+}
+
+.post {
+    background: white;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+}
+.post img {
+    width: 111px;
+    height: 79px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 83px;
+}
+
+.like-btn {
+    background: #008CBA;
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.close-btn {
+    float: right;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+.display {
+    width: 100px;
+    height: 100px;
+    margin: 10px auto;
+    border: 1px solid #ccc;
+    background-size: cover;
+    background-position: center;
+}
+
+
+@media screen and (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile, .posts {
+        width: 80%;
+        max-width: 90%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .navbar button {
+        margin-top: 10px;
+    }
+
+    .profile, .posts {
+        width: 100%;
+    }
+
+    .modal-content {
+        width: 95%;
+    }
+}
